@@ -7,23 +7,19 @@ namespace Task3
     {
         public static int GenerateRandomNumber(int max)
         {
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                byte[] randomNumber = new byte[4];
-                rng.GetBytes(randomNumber);
-                int value = BitConverter.ToInt32(randomNumber, 0);
-                return Math.Abs(value % max);
-            }
+            return RandomNumberGenerator.GetInt32(max);
         }
 
         public static string GenerateRandomKey()
         {
-            using (var rng = RandomNumberGenerator.Create())
+            byte[] key = new byte[32];
+
+            using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
             {
-                byte[] key = new byte[32];
                 rng.GetBytes(key);
-                return BitConverter.ToString(key).Replace("-", "");
             }
+
+            return Convert.ToHexString(key).ToLower();
         }
     }
 }
