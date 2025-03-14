@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "T8fBVkEfZ9w=",
+  "dgSpecHash": "kpD8DS/D9ec=",
   "success": true,
   "projectFilePath": "D:\\Itransition Ilearn\\Task3 (before 17.03)\\GitHub\\Task3\\Task3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\msi\\.nuget\\packages\\bouncycastle.netcore\\2.2.1\\bouncycastle.netcore.2.2.1.nupkg.sha512",
     "C:\\Users\\msi\\.nuget\\packages\\bouncycastle.netcoresdk\\1.9.7\\bouncycastle.netcoresdk.1.9.7.nupkg.sha512",
+    "C:\\Users\\msi\\.nuget\\packages\\commandlineparser\\2.9.1\\commandlineparser.2.9.1.nupkg.sha512",
     "C:\\Users\\msi\\.nuget\\packages\\consoletables\\2.6.2\\consoletables.2.6.2.nupkg.sha512",
     "C:\\Users\\msi\\.nuget\\packages\\hinetcloud.enterprises.bouncycastle.crypto\\25.3.5.1339\\hinetcloud.enterprises.bouncycastle.crypto.25.3.5.1339.nupkg.sha512",
     "C:\\Users\\msi\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

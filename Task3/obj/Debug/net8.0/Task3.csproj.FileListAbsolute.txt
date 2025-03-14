@@ -39,3 +39,4 @@ D:\Itransition Ilearn\Task3 (before 17.03)\GitHub\Task3\obj\Debug\net8.0\refint\
 D:\Itransition Ilearn\Task3 (before 17.03)\GitHub\Task3\obj\Debug\net8.0\Task3.pdb
 D:\Itransition Ilearn\Task3 (before 17.03)\GitHub\Task3\obj\Debug\net8.0\Task3.genruntimeconfig.cache
 D:\Itransition Ilearn\Task3 (before 17.03)\GitHub\Task3\obj\Debug\net8.0\ref\Task3.dll
+D:\Itransition Ilearn\Task3 (before 17.03)\GitHub\Task3\bin\Debug\net8.0\CommandLine.dll
