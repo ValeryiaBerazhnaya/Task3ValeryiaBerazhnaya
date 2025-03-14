@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MAL7MDDNrJk=",
+  "dgSpecHash": "T8fBVkEfZ9w=",
   "success": true,
-  "projectFilePath": "D:\\Itransition Ilearn\\Task3 (before 17.03)\\Task3\\Task3\\Task3.csproj",
+  "projectFilePath": "D:\\Itransition Ilearn\\Task3 (before 17.03)\\GitHub\\Task3\\Task3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\msi\\.nuget\\packages\\bouncycastle.netcore\\2.2.1\\bouncycastle.netcore.2.2.1.nupkg.sha512",
     "C:\\Users\\msi\\.nuget\\packages\\bouncycastle.netcoresdk\\1.9.7\\bouncycastle.netcoresdk.1.9.7.nupkg.sha512",

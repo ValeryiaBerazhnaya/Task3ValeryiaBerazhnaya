@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Task3
@@ -9,7 +10,8 @@ namespace Task3
         {
             using (var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(key)))
             {
-                return BitConverter.ToString(hmac.ComputeHash(Encoding.UTF8.GetBytes(message))).Replace("-", "");
+                byte[] hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(message));
+                return BitConverter.ToString(hash).Replace("-", "");
             }
         }
     }

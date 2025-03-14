@@ -12,20 +12,19 @@ public class GameTable
         this.dices = dices;
     }
 
-    public void DetermineFirstMove()
+    private void DetermineFirstMove()
     {
         string key = FairRandomGenerator.GenerateRandomKey();
         int randomValue = FairRandomGenerator.GenerateRandomNumber(2);
         string hmac = HMACGenerator.GenerateHMAC(key, randomValue.ToString());
 
-        Console.WriteLine($"I selected a random value in the range 0..1 (HMAC={hmac}).");
+        Console.WriteLine($"I selected a random value in the range 0..1 (HMAC={hmac.ToLower()}).");
         Console.WriteLine("Try to guess my selection.");
         int userGuess = GetUserInput("Enter your guess (0 or 1):", 1);
 
-        string actualKey = HMACGenerator.GenerateHMAC(key, randomValue.ToString());
-        Console.WriteLine($"My selection: {randomValue} (KEY={actualKey}).");
-
+        Console.WriteLine($"My selection: {randomValue} (KEY={key.ToLower()}).");
         userFirstMove = userGuess == randomValue;
+
         if (userFirstMove)
         {
             Console.WriteLine("You make the first move.");
@@ -161,16 +160,13 @@ public class GameTable
         int randomValue = FairRandomGenerator.GenerateRandomNumber(dice.Sides.Length);
         string hmac = HMACGenerator.GenerateHMAC(key, randomValue.ToString());
 
-        Console.WriteLine($"I selected a random value in the range 0..{dice.Sides.Length - 1} (HMAC={hmac}).");
+        Console.WriteLine($"I selected a random value in the range 0..{dice.Sides.Length - 1} (HMAC={hmac.ToLower()}).");
         int userNumber = GetUserInput("Add your number modulo 6:", dice.Sides.Length - 1);
 
-        int computerNumber = randomValue;
-        string actualKey = HMACGenerator.GenerateHMAC(key, computerNumber.ToString());
+        Console.WriteLine($"My number is {randomValue} (KEY={key.ToLower()}).");
 
-        Console.WriteLine($"My number is {computerNumber} (KEY={actualKey}).");
-
-        int result = (userNumber + computerNumber) % dice.Sides.Length;
-        Console.WriteLine($"The result is {userNumber} + {computerNumber} = {result} (mod {dice.Sides.Length}).");
+        int result = (userNumber + randomValue) % dice.Sides.Length;
+        Console.WriteLine($"The result is {userNumber} + {randomValue} = {result} (mod {dice.Sides.Length}).");
 
         return dice.Sides[result];
     }

@@ -1,19 +1,29 @@
-﻿namespace Task3
+﻿using System;
+using System.Security.Cryptography;
+
+namespace Task3
 {
     public class FairRandomGenerator
     {
-        private static readonly Random random = new Random();
-
         public static int GenerateRandomNumber(int max)
         {
-            return random.Next(max);
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                byte[] randomNumber = new byte[4];
+                rng.GetBytes(randomNumber);
+                int value = BitConverter.ToInt32(randomNumber, 0);
+                return Math.Abs(value % max);
+            }
         }
 
         public static string GenerateRandomKey()
         {
-            var bytes = new byte[32];
-            random.NextBytes(bytes);
-            return BitConverter.ToString(bytes).Replace("-", "");
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                byte[] key = new byte[32];
+                rng.GetBytes(key);
+                return BitConverter.ToString(key).Replace("-", "");
+            }
         }
     }
 }
